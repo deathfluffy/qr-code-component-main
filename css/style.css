@@ -1,4 +1,9 @@
 /* Reset styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 h1,
 h2,
 h3,
@@ -47,74 +52,63 @@ img {
   height: auto;
 }
 
+
 :root {
-  --light-grey: #d5e1ef;
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
 }
+
 
 body {
-  background-color: var(--light-grey);
+  font-family: "Outfit", sans-serif;
+  font-size: 0.938rem;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  min-height: 100svh
 }
 
+.container {
+  background-color: var(--white);
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
 
-  
-  :root {
-    --white: hsl(0, 0%, 100%);
-    --light-gray: hsl(212, 45%, 89%);
-    --grayish-blue: hsl(220, 15%, 55%);
-    --dark-blue: hsl(218, 44%, 22%);
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  body {
-    font-family: "Outfit", sans-serif;
-    font-size: 15px;
-    background-color: var(--light-gray);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 1px);
-    margin: 1.25rem;
-  }
-  
+.container img {
+  border-radius: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.container h1 {
+  color: var(--dark-blue);
+
+  margin-bottom: 1rem;
+}
+
+.container p {
+  color: var(--grayish-blue);
+
+}
+
+.attribution p {
+  font-size: 0.875rem;
+
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 428px) {
   .container {
-    background-color: var(--white);
-    padding: 1.25rem;
-    border-radius: 0.625rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
+    max-width: 20rem;
   }
-  
-  .container img {
-    border-radius: 0.625rem;
-    margin-bottom: 1rem;
-  }
-  
-  .container h1 {
-    color: var(--dark-blue);
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .container p {
-    color: var(--grayish-blue);
-    text-align: center;
-  }
-  
-  .attribution {
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
-  
-  @media (min-width: 500px) {
-    .container {
-      width: 400px;
-    }
-  }
+}
